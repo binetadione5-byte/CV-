@@ -1,0 +1,63 @@
+:root {
+  --blush: #f6e7e4;
+  --rose: #c98a95;
+  --wine: #7a3e4e;
+  --gold: #b8946a;
+  --ink: #3a2a2f;
+  --soft: #7d6b70;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #ece3e1; font-family: "Manrope", sans-serif; font-weight: 300; color: var(--ink); line-height: 1.55; padding: 2rem 1rem; }
+.page { width: 210mm; min-height: 297mm; margin: 0 auto; background: #fff; display: grid; grid-template-columns: 72mm 1fr; box-shadow: 0 10px 40px rgba(122, 62, 78, .15); }
+
+aside { background: var(--blush); padding: 14mm 8mm; }
+.avatar { width: 40mm; height: 40mm; border-radius: 50%; margin: 0 auto 8mm; border: 3px solid #fff; outline: 1px solid var(--rose); overflow: hidden; background: var(--rose); display: grid; place-items: center; color: #fff; font: 600 2.4rem "Cormorant Garamond", serif; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+aside h2 { font: 600 1.15rem "Cormorant Garamond", serif; color: var(--wine); border-bottom: 1px solid var(--rose); padding-bottom: 2mm; margin: 7mm 0 3mm; }
+aside ul { list-style: none; font-size: .78rem; }
+aside li { margin-bottom: 2.2mm; }
+.label { display: block; font-weight: 500; color: var(--wine); font-size: .7rem; }
+.skill { margin-bottom: 3mm; font-size: .78rem; }
+.bar { height: 4px; background: #fff; border-radius: 2px; margin-top: 1mm; }
+.bar span { display: block; height: 100%; background: var(--wine); border-radius: 2px; }
+
+main { padding: 14mm 12mm 14mm 11mm; }
+header h1 { font: 600 2.6rem/1 "Cormorant Garamond", serif; color: var(--wine); letter-spacing: .02em; }
+header p { margin-top: 2mm; font-size: .95rem; color: var(--gold); font-weight: 500; letter-spacing: .08em; }
+.intro { margin-top: 6mm; font-size: .85rem; color: var(--soft); padding-left: 4mm; border-left: 2px solid var(--rose); }
+main h2 { font: 600 1.4rem "Cormorant Garamond", serif; color: var(--wine); margin: 9mm 0 4mm; display: flex; align-items: center; gap: 3mm; }
+main h2::after { content: ""; flex: 1; height: 1px; background: var(--rose); }
+.item { margin-bottom: 5mm; }
+.item-head { display: flex; justify-content: space-between; gap: 4mm; align-items: baseline; }
+.item h3 { font-size: .92rem; font-weight: 500; }
+.item time { font-size: .72rem; color: var(--soft); white-space: nowrap; }
+.org { font-size: .78rem; color: var(--gold); font-weight: 500; margin: .5mm 0 1.5mm; }
+.item p { font-size: .8rem; color: var(--soft); }
+
+.print { position: fixed; right: 1rem; bottom: 1rem; background: var(--wine); color: #fff; border: 0; border-radius: 999px; padding: .8rem 1.4rem; font: 500 .8rem "Manrope", sans-serif; cursor: pointer; }
+.print:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+@media (max-width: 800px) {
+  .page { width: 100%; grid-template-columns: 1fr; }
+  main { padding: 10mm 8mm; }
+}
+@media print {
+  @page { size: A4; margin: 0; }
+  body { background: none; padding: 0; }
+  .page { box-shadow: none; width: 210mm; height: 297mm; }
+  .print { display: none; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+.inline { display: inline; }
+.w95 { width: 95%; }
+.w85 { width: 85%; }
+.w70 { width: 70%; }
+.w50 { width: 50%; }
+
+/* Navigation de la page CV */
+.topnav { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; max-width: 210mm; margin: 0 auto 1.2rem; font-size: .8rem; font-weight: 500; }
+.topnav a { color: var(--wine); text-decoration: none; padding-bottom: 2px; border-bottom: 1px solid transparent; }
+.topnav a:hover, .topnav a[aria-current] { border-color: var(--wine); }
+.topnav a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+@media print { .topnav { display: none; } }
